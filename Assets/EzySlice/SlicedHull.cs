@@ -100,7 +100,10 @@ namespace EzySlice {
          * This function will return null if upper hull does not exist
          */
         public GameObject CreateUpperHull() {
-            return CreateEmptyObject("Upper_Hull", upper_hull);
+            GameObject upperHull = CreateEmptyObject("Upper_Hull", upper_hull);
+            int sliceable = LayerMask.NameToLayer("Sliceable");
+            upperHull.layer= sliceable;
+            return upperHull;
         }
 
         /**
@@ -108,7 +111,10 @@ namespace EzySlice {
          * This function will return null if lower hull does not exist
          */
         public GameObject CreateLowerHull() {
-            return CreateEmptyObject("Lower_Hull", lower_hull);
+            GameObject lowerHull = CreateEmptyObject("Lower_Hull", lower_hull);
+            int sliceable = LayerMask.NameToLayer("Sliceable");
+            lowerHull.layer = sliceable;
+            return lowerHull;
         }
 
         public Mesh upperHull {
